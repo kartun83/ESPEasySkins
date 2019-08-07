@@ -1,3 +1,35 @@
+:root{
+  --white: #ffffff;
+  --background-main: #CCC;
+  --background-add: #07D;
+  --header-text-color: #003151;
+  --note-text: #999;
+
+  --link-color: #375a7f;
+
+  --input-normal-background: var(--background-main);
+  --input-hover-background: #EEE;
+  --input-text-color: #444;
+
+  --button-color: var(--background-add);
+  --button-text-color: var(--white);
+
+  --log-backgorund: #272727;
+  --log-timestamp: F1F1F1;
+
+  --heading-textcolor: #444;
+  --header-background: #375a7f;
+  --toast-color: white;
+
+  --table-background: #444;
+  --table-border: #888;
+  --table-text-color: #3498DB;
+
+  --info-banner: "Darkly theme :https://github.com/kartun83/ESPEasySkins";
+}
+
+
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, Ubuntu, Helvetica, Arial, sans-serif;
   line-height: 1.15;
@@ -31,7 +63,7 @@ h3 {
 .closebtn,
 .div_r {
 	float: right;
-	color: #fff
+	color: var(--white);
 }
 
 * {
@@ -43,13 +75,13 @@ h3 {
 }
 
 body{
-    color: #CCC;
+    color: var(--input-normal-background);
 }
 
 h1 {
-    color: #003151;
-	font-size: 2.0rem;
-	margin-top: 0.5rem;
+    color: var(--header-text-color);
+	  font-size: 2.0rem;
+	  margin-top: 0.5rem;
     margin-bottom: 1.5rem;
     font-weight: 400;
     line-height: 1.2;
@@ -61,26 +93,30 @@ h3 {
 }
 
 h2 {
-	background-color: #444;
-	color: #FFF;
+	background-color: var(--input-normal-background);
+	color: var(--heading-textcolor);
 	margin: 0 -4px;
 	padding: 6px;
 }
 
 h3 {
-	background-color: #EEE;
-	color: #444;
+	background-color: var(--input-normal-background);
+	color: var(--heading-textcolor);
 	margin: 16px -4px 0;
 	padding: 4px;
 }
 
 h6 {
 	font-size: 10pt;
-    color: #07D;
+    color: var(--heading-textcolor);
+}
+h6:after{
+  margin-left: 0.5rem;
+  content: var(--info-banner);
 }
 
 a{
-    color:#375a7f;
+    color: var(--link-color);
 }
 
 code,
@@ -95,14 +131,14 @@ xmp {
 
 
 td{
-    color: #3498DB !important;
+    color: var(--table-text-color) !important;
 }
 
 .button {
-	background-color: #07D;
+	background-color: var(--button-color);
 	border: none;
 	border-radius: 4px;
-	color: #FFF;
+	color: var(--button-text-color);
 	margin: 4px;
 	padding: 4px 16px
 }
@@ -113,7 +149,8 @@ select,
 textarea {
 	border-color: gray;
 	border-style: solid;
-	border-width: 1px
+	border-width: 1px;
+  border-radius: 0.25rem;
 }
 
 .button.link.wide {
@@ -131,10 +168,7 @@ textarea {
 	padding: 2px 4px
 }
 
-.checkmark,
-input,
-select,
-textarea {
+.checkmark{
 	border-radius: 0.25rem;
 }
 
@@ -144,13 +178,14 @@ textarea {
 
 input:hover,
 select:hover {
-	background-color: #ccc
+	background-color: var(--input-hover-background);
 }
 
 input,
 select,
 textarea {
-	background-color: #eee;
+	background-color: var(--input-normal-background);
+  color: var(--input-text-color);
 	margin: 4px;
 	padding: 4px 8px
 }
@@ -195,7 +230,7 @@ select.wide {
 }
 
 .checkmark {
-	background-color: #eee;
+	background-color: var(--input-normal-background);
 	height: 25px;
 	left: 0;
 	position: absolute;
@@ -204,11 +239,11 @@ select.wide {
 }
 
 .container:hover input~.checkmark {
-	background-color: #ccc
+	background-color: var(--input-hover-background);
 }
 
 .container input:checked~.checkmark {
-	background-color: #07D
+	background-color: var(--background-add);
 }
 
 .checkmark:after {
@@ -226,7 +261,7 @@ select.wide {
 	-ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
-	border: solid #fff;
+	border: solid var(--white);
 	border-width: 0 3px 3px 0;
 	height: 10px;
 	left: 7px;
@@ -264,7 +299,7 @@ select.wide {
 }
 
 .dotmark {
-	background-color: #eee;
+	background-color: var(--input-hover-background);
 	border-radius: 50%;
 	height: 26px;
 	left: 0;
@@ -274,11 +309,11 @@ select.wide {
 }
 
 .container2:hover input~.dotmark {
-	background-color: #ccc
+	background-color: var(--input-hover-background);
 }
 
 .container2 input:checked~.dotmark {
-	background-color: #07D
+	background-color: var(--background-add);
 }
 
 .dotmark:after {
@@ -291,7 +326,7 @@ select.wide {
 }
 
 .container2 .dotmark:after {
-	background: #fff;
+	background: var(--white);
 	border-radius: 50%;
 	height: 8px;
 	left: 8px;
@@ -308,10 +343,10 @@ textarea {
 }
 
 #toastmessage {
-	background-color: #07D;
+	background-color: var(--background-add);;
 	border-radius: 4px;
 	bottom: 30%;
-	color: #fff;
+	color: var(--toast-color);
 	font-size: 17px;
 	left: 282px;
 	margin-left: -125px;
@@ -400,21 +435,21 @@ textarea {
 }
 
 .logviewer {
-	background-color: #272727;
-	color: #F1F1F1;
+	background-color: var(--log-backgorund);
+	color: var(--log-timestamp);
 	height: 530px;
 	overflow: auto
 }
 
 textarea:hover {
-	background-color: #ccc
+	background-color: var(--input-hover-background);
 }
 
 table.multirow th,
 table.normal th {
-	background-color: #444;
-	border-color: #888;
-	color: #FFF;
+	background-color: var(--table-background);
+	border-color: var(--table-color);
+	color: var(--white);
 	font-weight: 700;
 	padding: 6px;
 	align-content: center;
@@ -460,7 +495,7 @@ table.multirow tr:nth-child(even) {
 
 .apheader,
 .headermenu {
-    background-color: #375a7f !important;
+    background-color: var(--header-background) !important;
 	padding: 8px 12px;
 	border-bottom: 1px solid #DDD;
 	height: 90px;
@@ -472,7 +507,7 @@ table.multirow tr:nth-child(even) {
 }
 
 .note {
-	color: #999 !important;
+	color: var(--note-text) !important;
 	font-style: italic
 }
 
@@ -496,8 +531,8 @@ table.multirow tr:nth-child(even) {
 }
 
 .menu.active {
-	background-color: #FFF;
-	border-color: #07D #DDD #FFF;
+	background-color: var(--white);
+	border-color: var(--background-add); #DDD var(--white);
 	color: #000
 }
 
@@ -588,7 +623,7 @@ section {
 }
 
 .btn:hover {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -608,13 +643,13 @@ fieldset:disabled a.btn {
 }
 
 .link {
-  color: #fff;
+  color: var(--white);
   background-color: #375a7f;
   border-color: #375a7f;
 }
 
 .link:hover {
-  color: #fff;
+  color: var(--white);
   background-color: #2b4764;
   border-color: #28415b;
 }
@@ -623,18 +658,18 @@ fieldset:disabled a.btn {
   -moz-box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
   -webkit-box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
-  
+
 }
 
 .link.disabled, .link:disabled {
-  color: #fff;
+  color: var(--white);
   background-color: #375a7f;
   border-color: #375a7f;
 }
 
 .link:not(:disabled):not(.disabled):active, .link:not(:disabled):not(.disabled).active,
 .show > .link.dropdown-toggle {
-  color: #fff;
+  color: var(--white);
   background-color: #28415b;
   border-color: #243a53;
 }
@@ -644,5 +679,5 @@ fieldset:disabled a.btn {
   -moz-box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
   -webkit-box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
-  
+
 }
